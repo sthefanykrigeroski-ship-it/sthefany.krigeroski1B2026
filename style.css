@@ -1,0 +1,287 @@
+/* ==========================================================================
+   FURACÃO BLOG - STYLE.CSS
+   Cores: Preto, Vermelho Escuro e Destaques Rubro-Negros
+   ========================================================================== */
+
+/* Reset & Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #0b0b0b;          /* Fundo principal escuro */
+    --bg-card: #141414;          /* Fundo dos cartões de posts */
+    --bg-card-hover: #1a1a1a;    /* Fundo do card ao passar o mouse */
+    --primary-red: #8b0000;      /* Vermelho escuro principal */
+    --primary-red-hover: #a80000;/* Vermelho para destaques */
+    --accent-red: #cc0000;       /* Vermelho vivo para detalhes */
+    --text-primary: #f5f5f5;     /* Texto principal (suave) */
+    --text-secondary: #b3b3b3;   /* Texto secundário */
+    --border-color: #262626;     /* Borda suave */
+    --border-red: #5c0000;       /* Borda avermelhada sutil */
+    --shadow-red: rgba(139, 0, 0, 0.25);
+    
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER (Cabeçalho Centralizado)
+   -------------------------------------------------------------------------- */
+header {
+    width: 100%;
+    background: linear-gradient(180deg, #1f0000 0%, #0b0b0b 100%);
+    border-bottom: 3px solid var(--primary-red);
+    padding: 50px 20px 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+header h1 span {
+    color: var(--accent-red);
+    font-weight: 400;
+}
+
+header p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   NAVEGAÇÃO (Menu Fixo e Centralizado)
+   -------------------------------------------------------------------------- */
+nav {
+    width: 100%;
+    background-color: #111111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 16px 24px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background-color: rgba(139, 0, 0, 0.2);
+    border-bottom: 3px solid var(--accent-red);
+}
+
+/* --------------------------------------------------------------------------
+   CONTEÚDO PRINCIPAL (Main Centralizado)
+   -------------------------------------------------------------------------- */
+.content-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* --------------------------------------------------------------------------
+   POSTS DO BLOG (Cartões Estilizados)
+   -------------------------------------------------------------------------- */
+.blog-post {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-red);
+    border-radius: 12px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-red);
+    border-color: var(--border-red);
+    border-left-color: var(--accent-red);
+    background-color: var(--bg-card-hover);
+}
+
+/* Badges / Selos das Seções */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    background-color: var(--primary-red);
+    color: #ffffff;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.4);
+}
+
+.badge-tech {
+    background: linear-gradient(135deg, #8b0000, #400000);
+    border: 1px solid #aa0000;
+}
+
+.badge-gold {
+    background: linear-gradient(135deg, #b8860b, #8b0000);
+}
+
+.badge-heart {
+    background: linear-gradient(135deg, #cc0000, #660000);
+}
+
+/* Títulos dos Posts */
+.blog-post h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Parágrafos dos Posts */
+.blog-post p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.blog-post p:last-child {
+    margin-bottom: 0;
+}
+
+/* Imagem Centralizada */
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 8px;
+    border: 2px solid var(--border-red);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER (Rodapé)
+   -------------------------------------------------------------------------- */
+footer {
+    width: 100%;
+    margin-top: auto;
+    background-color: #080808;
+    border-top: 1px solid var(--border-red);
+    padding: 30px 20px;
+    text-align: center;
+    color: #777777;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p:first-child {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE (Celulares e Tablets)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav a {
+        padding: 12px 15px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .blog-post {
+        padding: 25px 20px;
+    }
+    
+    .blog-post h2 {
+        font-size: 1.4rem;
+    }
+    
+    .blog-post p {
+        text-align: left;
+    }
+}
