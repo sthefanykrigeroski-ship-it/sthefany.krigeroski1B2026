@@ -168,13 +168,15 @@ nav ul li a:hover::after {
     margin-bottom: 0;
 }
 
-/* IMAGENS COM BORDA E CORTE PERFEITO */
+/* IMAGENS CENTRALIZADAS */
 .blog-post img {
-    width: 100%;
+    display: block;
+    margin: 20px auto; /* Centraliza a imagem horizontalmente */
+    max-width: 100%;
+    height: auto;
     max-height: 420px;
     object-fit: cover;
     border-radius: 12px;
-    margin: 18px 0;
     border: 1px solid var(--border-color);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
