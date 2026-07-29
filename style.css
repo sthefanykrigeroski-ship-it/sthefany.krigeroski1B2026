@@ -1,72 +1,239 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furacão Blog | Club Athletico Paranaense</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ==========================================================
+   FURACÃO BLOG - ESTILO MODERNO E PROFISSIONAL (DARK THEME)
+   ========================================================== */
 
-    <header>
-        <div class="header-container">
-            <h1>
-                <img src="imagens/a.png" alt="Logo Athletico" class="header-logo">
-                FURACÃO<span>BLOG</span>
-            </h1>
-            <p>A história, a tecnologia e a paixão pelo Rubro-Negro</p>
-        </div>
-    </header>
+/* 1. RESET E ESTRUTURA GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <nav>
-        <ul>
-            <li><a href="#historia">História</a></li>
-            <li><a href="#arena">Ligga Arena</a></li>
-            <li><a href="#conquistas">Conquistas</a></li>
-            <li><a href="#torcida">Torcida</a></li>
-        </ul>
-    </nav>
+html {
+    scroll-behavior: smooth;
+}
 
-    <main class="content-container">
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0b0c10;
+    color: #e0e6ed;
+    line-height: 1.7;
+}
 
-        <section id="historia" class="blog-post">
-            <div class="badge">História</div>
-            <h2>O Nascimento do Furacão</h2>
-            <img src="imagens/03.jpeg" alt="Fundação do Club Athletico Paranaense">
-            <p>O Club Athletico Paranaense não nasceu por acaso; ele surgiu da união de duas forças de Curitiba em 1924: o International Foot-Ball Club e o América Foot-Ball Club. Essa fusão deu origem a uma identidade forte, vestindo o vermelho e o preto que hoje conhecemos tão bem.</p>
-            <p>O apelido "Furacão" veio logo depois, na década de 1940, após uma sequência avassaladora de goleadas que mostrou para todo o Brasil que aquele time não entrava em campo de brincadeira. É uma história de paixão que atravessa gerações.</p>
-        </section>
+/* 2. CABEÇALHO (HEADER) */
+header {
+    background: linear-gradient(180deg, #14161d 0%, #0b0c10 100%);
+    padding: 40px 20px 25px 20px;
+    text-align: center;
+    border-bottom: 3px solid #c8102e;
+}
 
-        <section id="arena" class="blog-post">
-            <div class="badge badge-tech">Inovação</div>
-            <h2>Caldeirão Tecnológico (A Ligga Arena)</h2>
-            <img src="imagens/05.jpeg" alt="Ligga Arena / Arena da Baixada">
-            <p>Se tem uma coisa que o Athletico sabe fazer bem é ditar tendências, e a Ligga Arena é a prova viva disso. Conhecida historicamente como Joaquim Américo (ou Arena da Baixada), ela se transformou no estádio mais moderno da América Latina.</p>
-            <p>Com um teto retrátil impressionante que fecha em poucos minutos e gramado sintético de padrão FIFA, a Arena é um verdadeiro caldeirão tecnológico. Para quem visita, a experiência de design e a proximidade da torcida com o campo criam uma atmosfera única no futebol mundial.</p>
-        </section>
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        <section id="conquistas" class="blog-post">
-            <div class="badge badge-gold">Glórias</div>
-            <h2>As Grandes Conquistas</h2>
-            <img src="imagens/06.jpeg" alt="Conquistas e Troféus do Athletico Paranaense">
-            <p>A sala de troféus do Rubro-Negro é pesada! O grande divisor de águas foi a conquista do Campeonato Brasileiro de 2001, liderado por um ataque histórico que balançou as redes de todo o país.</p>
-            <p>Nos anos recentes, o Furacão consolidou sua força continental ao levantar as taças da Copa Sul-Americana (em 2018 e 2021) e da Copa do Brasil (em 2019). O Athletico deixou de ser uma força regional para se tornar um protagonista temido e respeitado em toda a América do Sul.</p>
-        </section>
+.header-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
 
-        <section id="torcida" class="blog-post">
-            <div class="badge badge-heart">Paixão</div>
-            <h2>A Força das Arquibancadas</h2>
-            <img src="imagens/imagem01.JPG" alt="Torcida do Athletico Paranaense nas arquibancadas">
-            <p>Nenhum clube se torna gigante sem uma torcida apaixonada. A torcida do Athletico Paranaense é conhecida por cantar o tempo todo e criar uma pressão psicológica absurda nos adversários dentro do Caldeirão.</p>
-            <p>O famoso "Por Amor ao Athletico" não é só um lema, é um estilo de vida para milhares de torcedores que lotam as arquibancadas, balançam as bandeiras e empurram o time nos momentos mais difíceis. É o coração do clube batendo forte a cada noventa minutos.</p>
-        </section>
+.header-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
 
-    </main>
+.header-container h1 span {
+    color: #c8102e;
+}
 
-    <footer>
-        <p>&copy; 2026 - Criado por um estudante do 1º Ano do Ensino Médio.</p>
-        <p>Desenvolvido para fins educativos.</p>
-    </footer>
+.header-container p {
+    color: #9aa5b1;
+    font-size: 1rem;
+    margin-top: 6px;
+}
 
-</body>
-</html>
+/* 3. MENU DE NAVEGAÇÃO */
+nav {
+    background-color: #151821;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #252936;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 4px 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #e0e6ed;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: all 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #c8102e;
+    background-color: rgba(200, 16, 46, 0.1);
+    border-radius: 6px;
+}
+
+/* 4. CONTEÚDO PRINCIPAL (CONTAINER & POSTS) */
+.content-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.blog-post {
+    background-color: #151821;
+    border: 1px solid #252936;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-post:hover {
+    border-color: rgba(200, 16, 46, 0.6);
+    transform: translateY(-2px);
+}
+
+.blog-post h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 14px 0 18px 0;
+    line-height: 1.3;
+}
+
+.blog-post p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.blog-post p:last-child {
+    margin-bottom: 0;
+}
+
+/* 5. CENTRALIZAÇÃO PERFEITA DAS IMAGENS */
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.blog-post img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #252936;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* 6. BADGES / ETIQUETAS */
+.badge {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: rgba(200, 16, 46, 0.2);
+    color: #ff2a4b;
+    border: 1px solid #c8102e;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.badge-tech {
+    background-color: rgba(0, 140, 255, 0.2);
+    color: #38bdf8;
+    border-color: #0284c7;
+}
+
+.badge-gold {
+    background-color: rgba(234, 179, 8, 0.2);
+    color: #facc15;
+    border-color: #ca8a04;
+}
+
+.badge-heart {
+    background-color: rgba(236, 72, 153, 0.2);
+    color: #f472b6;
+    border-color: #db2777;
+}
+
+/* 7. RODAPÉ (FOOTER) */
+footer {
+    background-color: #07080a;
+    border-top: 1px solid #1f232e;
+    text-align: center;
+    padding: 30px 20px;
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* 8. ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 650px) {
+    .header-container h1 {
+        font-size: 1.7rem;
+        gap: 10px;
+    }
+
+    .header-logo {
+        height: 36px;
+    }
+
+    nav ul li a {
+        padding: 10px 12px;
+        font-size: 0.75rem;
+    }
+
+    .blog-post {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .blog-post h2 {
+        font-size: 1.35rem;
+    }
+
+    .blog-post img {
+        max-height: 250px;
+    }
+}
